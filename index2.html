@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+  </head>
+  <body>
+    <div class="canvas">
+      <svg width="600" height="600"></svg>
+    </div>
+    <script>
+      const data = [
+        { width: 300, height: 200, fill: "orange" },
+        { width: 250, height: 150, fill: "pink" },
+        { width: 200, height: 100, fill: "teal" },
+      ];
+      const svg = d3.select("svg");
+      const rects = svg.selectAll("rect").data(data);
+      rects
+        .enter()
+        .append("rect")
+        .attr("width", (d) => d.width)
+        .attr("height", (d) => d.height)
+        .attr("fill", (d) => d.fill);
+    </script>
+  </body>
+</html>

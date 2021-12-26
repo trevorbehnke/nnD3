@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+  </head>
+  <body>
+    <div class="canvas"></div>
+    <script>
+      const canvas = d3.select(".canvas");
+      const svg = canvas.append("svg").attr("width", 700).attr("height", 700);
+      const group = svg.append("g").attr("transform", "translate(150, 150)");
+
+      group
+        .append("rect")
+        .attr("x", 100)
+        .attr("y", 200)
+        .attr("width", 300)
+        .attr("height", 400)
+        .attr("fill", "teal");
+      group
+        .append("circle")
+        .attr("cx", 50)
+        .attr("cy", 75)
+        .attr("r", 100)
+        .attr("fill", "pink")
+        .attr("stroke", "white")
+        .attr("stroke-width", 10);
+      group
+        .append("line")
+        .attr("x1", 400)
+        .attr("y1", 400)
+        .attr("x2", 550)
+        .attr("y2", 550)
+        .attr("stroke", "red")
+        .attr("stroke-width", 3);
+      svg
+        .append("text")
+        .text("Wow!")
+        .attr("x", 300)
+        .attr("y", 100)
+        .attr("fill", "white")
+        .attr("font-size", "50px")
+        .attr("font-family", "sans-serif");
+    </script>
+  </body>
+</html>
