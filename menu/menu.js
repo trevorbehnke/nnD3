@@ -63,9 +63,6 @@ const update = (data) => {
     .attr("width", x.bandwidth)
     .attr("fill", "teal")
     .attr("x", (d) => x(d.name));
-  // .transition(t)
-  //   .attr("height", d => graphHeight - y(d.orders))
-  //   .attr('y', d => y(d.orders));
 
   // append the enter selection to the DOM
   rects
